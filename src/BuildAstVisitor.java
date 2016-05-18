@@ -11,6 +11,11 @@ import java.util.List;
 
 class BuildAstVisitor extends PUTINBaseVisitor<PUTINNode>{
     HashMap<String, SymbolTableEntry> SymbolTable = new HashMap<String, SymbolTableEntry>();
+    ArrayList<String> ErrorLog = new ArrayList<String>();
+
+    public ArrayList<String> getErrorLog(){
+        return ErrorLog;
+    }
 
     @Override
     public PUTINNode visitProgram(PUTINParser.ProgramContext ctx) {
@@ -847,7 +852,7 @@ class BuildAstVisitor extends PUTINBaseVisitor<PUTINNode>{
                 }
                 else {
                     boolret.ExpressionN = node;
-                    System.out.print(((ValueTermNode) X.ExpressionN).ValueN.toString() + " And " + ((ValueTermNode) Y.ExpressionN).ValueN.toString() + " don't match\n");
+                    ErrorLog.add(((ValueTermNode) X.ExpressionN).ValueN.toString() + " And " + ((ValueTermNode) Y.ExpressionN).ValueN.toString() + " don't match\n");
                 }
             }
             else {
@@ -871,7 +876,7 @@ class BuildAstVisitor extends PUTINBaseVisitor<PUTINNode>{
                 }
                 else {
                     boolret.ExpressionN = node;
-                    System.out.print(((ValueTermNode) X.ExpressionN).ValueN.toString() + " And " + ((ValueTermNode) Y.ExpressionN).ValueN.toString() + " don't match\n");
+                    ErrorLog.add(((ValueTermNode) X.ExpressionN).ValueN.toString() + " And " + ((ValueTermNode) Y.ExpressionN).ValueN.toString() + " don't match\n");
                 }
             }
             else {
@@ -920,7 +925,7 @@ class BuildAstVisitor extends PUTINBaseVisitor<PUTINNode>{
                 }
                 else {
                     boolret.ExpressionN = node;
-                    System.out.print(((ValueTermNode) X.ExpressionN).ValueN.toString() + " And " + ((ValueTermNode) Y.ExpressionN).ValueN.toString() + " don't match\n");
+                    ErrorLog.add(((ValueTermNode) X.ExpressionN).ValueN.toString() + " And " + ((ValueTermNode) Y.ExpressionN).ValueN.toString() + " don't match\n");
                 }
             }
             else {
@@ -969,7 +974,7 @@ class BuildAstVisitor extends PUTINBaseVisitor<PUTINNode>{
                 }
                 else {
                     boolret.ExpressionN = node;
-                    System.out.print(((ValueTermNode) X.ExpressionN).ValueN.toString() + " And " + ((ValueTermNode) Y.ExpressionN).ValueN.toString() + " don't match\n");
+                    ErrorLog.add(((ValueTermNode) X.ExpressionN).ValueN.toString() + " And " + ((ValueTermNode) Y.ExpressionN).ValueN.toString() + " don't match\n");
                 }
             }
             else {
@@ -993,7 +998,7 @@ class BuildAstVisitor extends PUTINBaseVisitor<PUTINNode>{
                 }
                 else {
                     boolret.ExpressionN = node;
-                    System.out.print(((ValueTermNode) X.ExpressionN).ValueN.toString() + " And " + ((ValueTermNode) Y.ExpressionN).ValueN.toString() + " don't match\n");
+                    ErrorLog.add(((ValueTermNode) X.ExpressionN).ValueN.toString() + " And " + ((ValueTermNode) Y.ExpressionN).ValueN.toString() + " don't match\n");
                 }
             }
             else {
@@ -1017,7 +1022,7 @@ class BuildAstVisitor extends PUTINBaseVisitor<PUTINNode>{
                 }
                 else {
                     boolret.ExpressionN = node;
-                    System.out.print(((ValueTermNode) X.ExpressionN).ValueN.toString() + " And " + ((ValueTermNode) Y.ExpressionN).ValueN.toString() + " don't match\n");
+                    ErrorLog.add(((ValueTermNode) X.ExpressionN).ValueN.toString() + " And " + ((ValueTermNode) Y.ExpressionN).ValueN.toString() + " don't match\n");
                 }
             }
             else {
@@ -1041,7 +1046,7 @@ class BuildAstVisitor extends PUTINBaseVisitor<PUTINNode>{
                 }
                 else {
                     boolret.ExpressionN = node;
-                    System.out.print(((ValueTermNode) X.ExpressionN).ValueN.toString() + " And " + ((ValueTermNode) Y.ExpressionN).ValueN.toString() + " don't match\n");
+                    ErrorLog.add(((ValueTermNode) X.ExpressionN).ValueN.toString() + " And " + ((ValueTermNode) Y.ExpressionN).ValueN.toString() + " don't match\n");
                 }
             }
             else {
@@ -1065,7 +1070,7 @@ class BuildAstVisitor extends PUTINBaseVisitor<PUTINNode>{
                 }
                 else {
                     boolret.ExpressionN = node;
-                    System.out.print(((ValueTermNode) X.ExpressionN).ValueN.toString() + " And " + ((ValueTermNode) Y.ExpressionN).ValueN.toString() + " don't match\n");
+                    ErrorLog.add(((ValueTermNode) X.ExpressionN).ValueN.toString() + " And " + ((ValueTermNode) Y.ExpressionN).ValueN.toString() + " don't match\n");
                 }
             }
             else {
@@ -1088,7 +1093,7 @@ class BuildAstVisitor extends PUTINBaseVisitor<PUTINNode>{
                 }
                 else {
                     boolret.ExpressionN = node;
-                    System.out.print(((ValueTermNode) X.ExpressionN).ValueN.toString() + " is not a Boolean\n");
+                    ErrorLog.add(((ValueTermNode) X.ExpressionN).ValueN.toString() + " is not a Boolean\n");
                 }
             }
             else {
@@ -1127,7 +1132,7 @@ class BuildAstVisitor extends PUTINBaseVisitor<PUTINNode>{
                 }
                 else {
                     numret.ExpressionN = node;
-                    System.out.print(((ValueTermNode) X.ExpressionN).ValueN.toString() + " And " + ((ValueTermNode) Y.ExpressionN).ValueN.toString() + " don't match\n");
+                    ErrorLog.add(((ValueTermNode) X.ExpressionN).ValueN.toString() + " And " + ((ValueTermNode) Y.ExpressionN).ValueN.toString() + " don't match\n");
                 }
             }
             else {
@@ -1151,7 +1156,7 @@ class BuildAstVisitor extends PUTINBaseVisitor<PUTINNode>{
                 }
                 else {
                     numret.ExpressionN = node;
-                    System.out.print(((ValueTermNode) X.ExpressionN).ValueN.toString() + " And " + ((ValueTermNode) Y.ExpressionN).ValueN.toString() + " don't match\n");
+                    ErrorLog.add(((ValueTermNode) X.ExpressionN).ValueN.toString() + " And " + ((ValueTermNode) Y.ExpressionN).ValueN.toString() + " don't match\n");
                 }
             }
             else {
@@ -1175,7 +1180,7 @@ class BuildAstVisitor extends PUTINBaseVisitor<PUTINNode>{
                 }
                 else {
                     numret.ExpressionN = node;
-                    System.out.print(((ValueTermNode) X.ExpressionN).ValueN.toString() + " And " + ((ValueTermNode) Y.ExpressionN).ValueN.toString() + " don't match\n");
+                    ErrorLog.add(((ValueTermNode) X.ExpressionN).ValueN.toString() + " And " + ((ValueTermNode) Y.ExpressionN).ValueN.toString() + " don't match\n");
                 }
             }
             else {
@@ -1191,15 +1196,21 @@ class BuildAstVisitor extends PUTINBaseVisitor<PUTINNode>{
             Y = EvaluateNumberExpression(((DivideNode) node).RightN);
             if (!X.containId && !Y.containId) {
                 if (((ValueTermNode) X.ExpressionN).ValueN instanceof NumberValueNode && ((ValueTermNode) Y.ExpressionN).ValueN instanceof NumberValueNode){
-                    ValueTermNode node1 = new ValueTermNode();
-                    NumberValueNode node2 = new NumberValueNode();
-                    node2.Value = ((NumberValueNode) ((ValueTermNode) X.ExpressionN).ValueN).Value / ((NumberValueNode) ((ValueTermNode) Y.ExpressionN).ValueN).Value;
-                    node1.ValueN = node2;
-                    numret.ExpressionN = node1;
+                    if (((NumberValueNode) ((ValueTermNode) Y.ExpressionN).ValueN).Value != 0) {
+                        ValueTermNode node1 = new ValueTermNode();
+                        NumberValueNode node2 = new NumberValueNode();
+                        node2.Value = ((NumberValueNode) ((ValueTermNode) X.ExpressionN).ValueN).Value / ((NumberValueNode) ((ValueTermNode) Y.ExpressionN).ValueN).Value;
+                        node1.ValueN = node2;
+                        numret.ExpressionN = node1;
+                    }
+                    else {
+                        numret.ExpressionN = node;
+                        ErrorLog.add("Can't divide by 0");
+                    }
                 }
                 else {
                     numret.ExpressionN = node;
-                    System.out.print(((ValueTermNode) X.ExpressionN).ValueN.toString() + " And " + ((ValueTermNode) Y.ExpressionN).ValueN.toString() + " don't match\n");
+                    ErrorLog.add(((ValueTermNode) X.ExpressionN).ValueN.toString() + " And " + ((ValueTermNode) Y.ExpressionN).ValueN.toString() + " don't match\n");
                 }
             }
             else {
@@ -1223,7 +1234,7 @@ class BuildAstVisitor extends PUTINBaseVisitor<PUTINNode>{
                 }
                 else {
                     numret.ExpressionN = node;
-                    System.out.print(((ValueTermNode) X.ExpressionN).ValueN.toString() + " And " + ((ValueTermNode) Y.ExpressionN).ValueN.toString() + " don't match\n");
+                    ErrorLog.add(((ValueTermNode) X.ExpressionN).ValueN.toString() + " And " + ((ValueTermNode) Y.ExpressionN).ValueN.toString() + " don't match\n");
                 }
             }
             else {
@@ -1246,7 +1257,7 @@ class BuildAstVisitor extends PUTINBaseVisitor<PUTINNode>{
                 }
                 else {
                     numret.ExpressionN = node;
-                    System.out.print(((ValueTermNode) X.ExpressionN).ValueN.toString() + " is not a Boolean\n");
+                    ErrorLog.add(((ValueTermNode) X.ExpressionN).ValueN.toString() + " is not a Boolean\n");
                 }
             }
             else {

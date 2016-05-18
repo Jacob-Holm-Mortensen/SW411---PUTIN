@@ -133,23 +133,32 @@ public class Test2 {
         PUTINParser Parser = new PUTINParser(tokenStream);
         BuildAstVisitor BuildAST = new BuildAstVisitor();
         PUTINNode node = BuildAST.visitProgram(Parser.program());
-        HashMap<String, SymbolTableEntry> SymbolTable = new HashMap<String, SymbolTableEntry>();
-        BuildSymbolTable BuildSym = new BuildSymbolTable();
-        SymbolTable = BuildSym.ReturnSymbolTable(node);
-        GenerateCode GC = new GenerateCode();
-        ArrayList<ArrayList<String>> result = GC.getThings((ProgramNode) node, SymbolTable);
-        ArrayList<String> ErrorLog = BuildSym.getErrorLog();
+        ArrayList<String> ErrorLog1 = BuildAST.getErrorLog();
 
-        if (ErrorLog.size() == 0){
-            try {
-                WriterClass W = new WriterClass("KB");
-                W.WriteThis(result, "KB"); //gets initial code setup from the headersetup class
-            } catch (IOException e) {
-                e.printStackTrace();
+        if (ErrorLog1.size() == 0){
+            HashMap<String, SymbolTableEntry> SymbolTable = new HashMap<String, SymbolTableEntry>();
+            BuildSymbolTable BuildSym = new BuildSymbolTable();
+            SymbolTable = BuildSym.ReturnSymbolTable(node);
+            GenerateCode GC = new GenerateCode();
+            ArrayList<ArrayList<String>> result = GC.getThings((ProgramNode) node, SymbolTable);
+            ArrayList<String> ErrorLog2 = BuildSym.getErrorLog();
+
+            if (ErrorLog2.size() == 0){
+                try {
+                    WriterClass W = new WriterClass("KB");
+                    W.WriteThis(result, "KB"); //gets initial code setup from the headersetup class
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+            else {
+                for (String S : ErrorLog2) {
+                    System.out.print(S + "\n");
+                }
             }
         }
         else {
-            for (String S : ErrorLog) {
+            for (String S : ErrorLog1) {
                 System.out.print(S + "\n");
             }
         }
