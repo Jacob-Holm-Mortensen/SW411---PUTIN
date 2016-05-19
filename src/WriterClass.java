@@ -87,7 +87,7 @@ public class WriterClass {
         writer.write("\t\t\t\tBoolean is = false;\n");
         writer.write("\t\t\t\tfor (Player PL : PlayerList) {\n");
         writer.write("\t\t\t\t\tfor (Piece PI : PL.PieceList) {\n");
-        writer.write("\t\t\t\t\t\tif (PI.Coord.equals(new Coordinate((double) i, (double) j))){\n");
+        writer.write("\t\t\t\t\t\tif (PI.Coord.equals(new Coordinate((double) j, (double) i))){\n");
         writer.write("\t\t\t\t\t\t\tis = true;\n");
         writer.write("\t\t\t\t\t\t}\n");
         writer.write("\t\t\t\t\t}\n");
