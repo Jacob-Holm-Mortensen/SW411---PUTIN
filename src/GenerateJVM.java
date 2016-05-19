@@ -38,7 +38,7 @@ public class GenerateJVM implements VisitAST{
             tempResult.add(temp + " " + ((AssignmentStmtNode2) node).IdN.toString() + " = " + makeJavaExpression(((AssignmentStmtNode2) node).ExpressionN) + ";");
         }
         else if (node instanceof AssignmentStmtNode3){
-
+            tempResult.add(((AssignmentStmtNode3) node).IdNA.get(0).toString() + " = " + makeJavaExpression(((AssignmentStmtNode3) node).ExpressionN) + ";");
         }
         else if (node instanceof IfStmtNode){
             tempResult.add("if (" + makeJavaExpression(((IfStmtNode) node).ExpressionN) + "){");

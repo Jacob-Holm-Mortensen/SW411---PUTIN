@@ -26,6 +26,8 @@ public class WriterClass {
         for (String s : JVM) {
             writer.write(s + "\n");
         }
+        writer.flush();
+        writer.close();
     }
 
     public void WriteThis(ArrayList<ArrayList<String>> r, String S)throws IOException{
