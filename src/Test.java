@@ -153,7 +153,7 @@ public class Test {
 
             if (ErrorLog2.size() == 0){
                 try {
-                    WriterClass W = new WriterClass("SelfMadeGame");
+                    WriterClass W = new WriterClass("SelfMadeGame.java");
                     W.WriteThis(result, "SelfMadeGame"); //gets initial code setup from the headersetup class
                 } catch (IOException e) {
                     e.printStackTrace();

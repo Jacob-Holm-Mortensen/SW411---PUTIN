@@ -64,7 +64,7 @@ public class Test3 {
 
             if (ErrorLog2.size() == 0){
                 try {
-                    WriterClass W = new WriterClass("JVM");
+                    WriterClass W = new WriterClass("JVM.j");
                     W.WriteJVM(result); //gets initial code setup from the headersetup class
                 } catch (IOException e) {
                     e.printStackTrace();

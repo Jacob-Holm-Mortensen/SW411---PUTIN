@@ -17,7 +17,7 @@ public class WriterClass {
 
     public WriterClass(String S)throws IOException{
         headerSetup = new HeaderSetup();
-        outputFile = new File("Output\\" + S + ".java");
+        outputFile = new File("Output\\" + S);
         outputFile.createNewFile();
         writer = new FileWriter(outputFile);
     }

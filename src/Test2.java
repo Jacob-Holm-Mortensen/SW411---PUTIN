@@ -145,7 +145,7 @@ public class Test2 {
 
             if (ErrorLog2.size() == 0){
                 try {
-                    WriterClass W = new WriterClass("KB");
+                    WriterClass W = new WriterClass("KB.java");
                     W.WriteThis(result, "KB"); //gets initial code setup from the headersetup class
                 } catch (IOException e) {
                     e.printStackTrace();
